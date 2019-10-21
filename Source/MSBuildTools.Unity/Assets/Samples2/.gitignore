@@ -1,0 +1,8 @@
+# Don't ignore MSBuild project files
+!**/*.csproj
+!**/*.sln
+
+# Ignore the Output directory
+.obj/
+.bin/
+Dependencies/

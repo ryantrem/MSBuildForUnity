@@ -1,0 +1,21 @@
+<Project>
+
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <BaseIntermediateOutputPath>.obj</BaseIntermediateOutputPath>
+    <BaseOutputPath>.bin</BaseOutputPath>
+    <TargetName>$(MSBuildProjectName)</TargetName>
+    <!-- <TargetName Condition="'$(MSBuildForUnityDependenciesOnly)' == 'true'">$(TargetName).Placeholder</TargetName> -->
+    <EnableDefaultCompileItems Condition="'$(MSBuildForUnityDependenciesOnly)' == 'true'">false</EnableDefaultCompileItems>
+  </PropertyGroup>
+
+  <ItemGroup>
+     <Reference Include="UnityEngine.dll">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2018.4.5f1\Editor\Data\Managed\UnityEngine.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <!-- <Import Project="Sdk.props" Sdk="Microsoft.NET.Sdk" /> -->
+
+</Project>

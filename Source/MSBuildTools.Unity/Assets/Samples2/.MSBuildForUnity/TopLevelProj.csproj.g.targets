@@ -1,0 +1,14 @@
+<Project>
+
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+  </PropertyGroup>
+
+  <!-- Automatically exclude files in directories below this directory that have .asmdefs -->
+  <ItemGroup>
+    <Compile Remove="$(MSBuildProjectDirectory)/SampleLib/**" />
+  </ItemGroup>
+
+  <!-- <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" /> -->
+
+</Project>

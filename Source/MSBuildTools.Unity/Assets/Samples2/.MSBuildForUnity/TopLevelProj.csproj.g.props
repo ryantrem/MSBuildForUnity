@@ -1,0 +1,27 @@
+<Project>
+
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <BaseIntermediateOutputPath>.obj</BaseIntermediateOutputPath>
+    <!-- <BaseOutputPath>Dependencies</BaseOutputPath> -->
+    <OutputPath>Dependencies</OutputPath>
+    <!-- <TargetName>$(MSBuildProjectName).Placeholder</TargetName> -->
+    <!-- <EnableDefaultCompileItems>false</EnableDefaultCompileItems> -->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MSBuildForUnity" Version="1.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="SampleLib/SampleLib.csproj">
+      <AdditionalProperties>%(AdditionalProperties);MSBuildForUnityDependenciesOnly=true</AdditionalProperties>
+    </ProjectReference>
+  </ItemGroup>
+
+  <!-- <Import Project="Sdk.props" Sdk="Microsoft.NET.Sdk" /> -->
+
+</Project>

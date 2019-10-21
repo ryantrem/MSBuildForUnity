@@ -1,0 +1,9 @@
+<Project>
+
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+  </PropertyGroup>
+
+  <Import Project=".MSBuildForUnity/SampleLib.csproj.g.targets" />
+
+</Project>

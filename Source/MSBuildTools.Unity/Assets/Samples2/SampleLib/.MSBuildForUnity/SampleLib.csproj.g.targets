@@ -1,0 +1,14 @@
+<Project>
+
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <!-- <MSBuildForUnityDependenciesOnly>true</MSBuildForUnityDependenciesOnly> -->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- <Compile Condition="'$(MSBuildForUnityDependenciesOnly)' == 'true'" Remove="@(Compile)" /> -->
+  </ItemGroup>
+
+  <!-- <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" /> -->
+
+</Project>
