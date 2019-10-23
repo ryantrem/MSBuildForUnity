@@ -6,14 +6,17 @@
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
   </PropertyGroup>
 
-  <Import Project=".MSBuildForUnity/SampleLib.csproj.g.targets" />
-
+  <!-- Another example of a manually added Package dependency. -->
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="11.0.1" />
   </ItemGroup>
 
+  <!-- An example of a manually added ProjectReference to a project that is not managed by the Unity project (e.g. project generator).
+       Could be some library shared between the Unity project and some non-Unity project. -->
   <ItemGroup>
     <ProjectReference Include="..\..\..\ExternalLib\ExternalLib.csproj" />
   </ItemGroup>
+
+  <Import Project=".MSBuildForUnity/SampleLib.csproj.g.targets" />
 
 </Project>

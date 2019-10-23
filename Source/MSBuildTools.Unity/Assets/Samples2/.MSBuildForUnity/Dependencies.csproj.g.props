@@ -1,27 +1,36 @@
+<!-- This props is regenerated every time you run the generator, so the user should not touch this file. -->
+
 <Project>
 
   <PropertyGroup>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <!-- Make sure Unity ignores the contents of the intermediate output path. -->
     <BaseIntermediateOutputPath>.obj</BaseIntermediateOutputPath>
+    <!-- Set the OutputPath to some well known path, could be Plugins from the root if we thought that made sense. -->
     <OutputPath>Dependencies</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
+    <!-- This gives us a bunch of the behavior we need, so I think this should be part of the generated props. -->
     <PackageReference Include="MSBuildForUnity" Version="1.0.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
   </ItemGroup>
 
+  <!-- Note that all "internal" project references use <Private>false</Private> to prevent the output dll from being copied into the Dependencies directory (we don't want Unity to see these dlls). -->
   <ItemGroup>
+    <!-- This would be generated from the asmdef as an "internal" reference (all within Unity). -->
     <ProjectReference Include="SampleLib/SampleLib.csproj">
       <Private>false</Private>
     </ProjectReference>
+    <!-- This would be generated and just scoops up any csproj files that are included in UPM packages (with the assumption that the only reason they would be there is to support the UPM/NuGet bootstrapping). -->
     <ProjectReference Include="..\..\Library\PackageCache\**\*.csproj">
       <Private>false</Private>
     </ProjectReference>
   </ItemGroup>
 
+  <!-- Note that this is the special "NoTarget" SDK to prevent this project from producing a dll. -->
   <Import Project="Sdk.props" Sdk="Microsoft.Build.NoTargets" Version="1.0.80" />
 
 </Project>

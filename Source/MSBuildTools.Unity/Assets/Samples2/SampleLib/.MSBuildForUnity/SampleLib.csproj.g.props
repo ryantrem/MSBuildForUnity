@@ -2,12 +2,14 @@
 
   <PropertyGroup>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <!-- Make sure Unity is ignoring all output of this project. -->
     <BaseIntermediateOutputPath>.obj</BaseIntermediateOutputPath>
     <BaseOutputPath>.bin</BaseOutputPath>
   </PropertyGroup>
 
   <ItemGroup>
-     <Reference Include="UnityEngine.dll">
+    <!-- This would be a generated list of assembly dependencies. -->
+    <Reference Include="UnityEngine.dll">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2018.4.5f1\Editor\Data\Managed\UnityEngine.dll</HintPath>
       <Private>false</Private>
     </Reference>
