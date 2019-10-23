@@ -17,6 +17,9 @@
     <ProjectReference Include="SampleLib/SampleLib.csproj">
       <Private>false</Private>
     </ProjectReference>
+    <ProjectReference Include="..\..\Library\PackageCache\**\*.csproj">
+      <Private>false</Private>
+    </ProjectReference>
   </ItemGroup>
 
   <Import Project="Sdk.props" Sdk="Microsoft.Build.NoTargets" Version="1.0.80" />
