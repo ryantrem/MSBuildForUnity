@@ -4,9 +4,6 @@
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
     <BaseIntermediateOutputPath>.obj</BaseIntermediateOutputPath>
     <BaseOutputPath>.bin</BaseOutputPath>
-    <TargetName>$(MSBuildProjectName)</TargetName>
-    <!-- <TargetName Condition="'$(MSBuildForUnityDependenciesOnly)' == 'true'">$(TargetName).Placeholder</TargetName> -->
-    <EnableDefaultCompileItems Condition="'$(MSBuildForUnityDependenciesOnly)' == 'true'">false</EnableDefaultCompileItems>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,6 +13,6 @@
     </Reference>
   </ItemGroup>
 
-  <!-- <Import Project="Sdk.props" Sdk="Microsoft.NET.Sdk" /> -->
+  <Import Project="Sdk.props" Sdk="Microsoft.NET.Sdk" />
 
 </Project>

@@ -3,10 +3,7 @@
   <PropertyGroup>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
     <BaseIntermediateOutputPath>.obj</BaseIntermediateOutputPath>
-    <!-- <BaseOutputPath>Dependencies</BaseOutputPath> -->
     <OutputPath>Dependencies</OutputPath>
-    <!-- <TargetName>$(MSBuildProjectName).Placeholder</TargetName> -->
-    <!-- <EnableDefaultCompileItems>false</EnableDefaultCompileItems> -->
   </PropertyGroup>
 
   <ItemGroup>
@@ -18,10 +15,10 @@
 
   <ItemGroup>
     <ProjectReference Include="SampleLib/SampleLib.csproj">
-      <AdditionalProperties>%(AdditionalProperties);MSBuildForUnityDependenciesOnly=true</AdditionalProperties>
+      <Private>false</Private>
     </ProjectReference>
   </ItemGroup>
 
-  <!-- <Import Project="Sdk.props" Sdk="Microsoft.NET.Sdk" /> -->
+  <Import Project="Sdk.props" Sdk="Microsoft.Build.NoTargets" Version="1.0.80" />
 
 </Project>

@@ -1,7 +1,15 @@
-﻿<Project Sdk="Microsoft.Build.NoTargets/1.0.80">
+﻿<Project>
+
+  <Import Project=".MSBuildForUnity/TopLevelProj.csproj.g.props" />
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Stateless" Version="4.2.1" />
+  </ItemGroup>
+
+  <Import Project=".MSBuildForUnity/TopLevelProj.csproj.g.targets" />
 
 </Project>

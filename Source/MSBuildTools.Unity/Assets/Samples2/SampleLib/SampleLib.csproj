@@ -1,7 +1,19 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project>
+
+  <Import Project=".MSBuildForUnity/SampleLib.csproj.g.props" />
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
   </PropertyGroup>
+
+  <Import Project=".MSBuildForUnity/SampleLib.csproj.g.targets" />
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\ExternalLib\ExternalLib.csproj" />
+  </ItemGroup>
 
 </Project>
