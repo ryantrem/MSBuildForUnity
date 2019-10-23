@@ -1,6 +1,6 @@
 ﻿<Project>
 
-  <Import Project=".MSBuildForUnity/TopLevelProj.csproj.g.props" />
+  <Import Project=".MSBuildForUnity/Dependencies.csproj.g.props" />
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
@@ -10,6 +10,6 @@
     <PackageReference Include="Stateless" Version="4.2.1" />
   </ItemGroup>
 
-  <Import Project=".MSBuildForUnity/TopLevelProj.csproj.g.targets" />
+  <Import Project=".MSBuildForUnity/Dependencies.csproj.g.targets" />
 
 </Project>
